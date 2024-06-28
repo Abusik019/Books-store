@@ -1,0 +1,121 @@
+.all-books {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.books-container {
+  min-height: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: calc(100% - 500px);
+  box-sizing: border-box;
+  padding: 30px;
+  text-align: left;
+}
+.books-container h1 {
+  font-weight: 400;
+  font-size: 42px;
+  padding-left: 20px;
+}
+
+.empty-def_container {
+  width: 400px;
+  height: 100%;
+  background-color: white;
+}
+
+.books-content {
+  margin: 0;
+  max-height: 750px;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: auto;
+  padding: 30px 30px 10px 30px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.books-content li {
+  background-color: white;
+  width: 300px;
+  height: 150px;
+  border-radius: 20px;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-image {
+  height: 100%;
+  width: 35%;
+  position: relative;
+}
+.book-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 7px;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+.book-image button {
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  text-align: center;
+  padding: 0;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-around;
+  width: 50%;
+  height: 100%;
+}
+.book-info h1 {
+  color: #3c8bfa;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+}
+.book-info h2 {
+  font-size: 16px;
+  margin: 0;
+  line-height: 20px;
+}
+.book-info h3 {
+  margin: 0;
+}
+.book-info h4 {
+  color: #a7a7a7;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FCA66C;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+  margin: 10px 0;
+}/*# sourceMappingURL=style.css.map */
