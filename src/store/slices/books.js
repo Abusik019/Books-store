@@ -18,6 +18,16 @@ export const getBooks = createAsyncThunk("books/getBooks", async () => {
 
     return response.data;
 });
+    
+export const getBookById = createAsyncThunk("books/getBookById", async (id) => {
+    const response = await axios.get(`${API_URL}/${id}`);
+
+    if (response.status !== 200) {
+        throw new Error("Error to fetching data");
+    }
+
+    return response.data;
+})
 
 const booksSlice = createSlice({
     name: "books",
@@ -39,6 +49,21 @@ const booksSlice = createSlice({
             state.error = null;
         });
         builder.addCase(getBooks.rejected, (state, action) => {
+            state.error = action.error.message;
+            state.loading = false;
+        })
+
+        //getBooksById
+        builder.addCase(getBookById.pending, (state) => {
+            state.loading  = true;
+        });
+        builder.addCase(getBookById.fulfilled, (state, action) => {
+            state.list = action.payload;
+
+            state.loading = false;
+            state.error = null;
+        });
+        builder.addCase(getBookById.rejected, (state, action) => {
             state.error = action.error.message;
             state.loading = false;
         })

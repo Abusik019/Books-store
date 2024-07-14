@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getBooks } from "./../../store/slices/books";
 import { Aside } from "../../components/Aside";
+import { NavLink } from "react-router-dom";
 
 function AllBooks() {
     const dispatch = useDispatch();
     const books = useSelector((state) => state.books.list);
     const loading = useSelector((state) => state.books.loading);
     const error = useSelector((state) => state.books.error);
-    const [hoveredBookId, setHoveredBookId] = useState(null);
 
     useEffect(() => {
         dispatch(getBooks());
@@ -32,22 +32,17 @@ function AllBooks() {
                     {books.map((book) => (
                         <li
                             key={book.id}
-                            onMouseEnter={() => setHoveredBookId(book.id)}
-                            onMouseLeave={() => setHoveredBookId(null)}
                         >
                             <div className="book-image">
                                 <img src={book.avatar} />
-                                <button style={{ display: hoveredBookId === book.id ? 'block' : 'none' }}>Read</button>
                             </div>
                             <ul className="book-info">
                                 <h1>{book.author}</h1>
                                 <h2>{book.name}</h2>
-                                <h3>{book.price}$</h3>
-                                <h4>
-                                    {book.createdAt.match(
-                                        /\d\d\d\d-\d\d-\d\d/g
-                                    )}
-                                </h4>
+                                <div className="price-wrapper">
+                                    <h3>{book.price}$</h3>
+                                    <NavLink to={`/${book.id}`}><button></button></NavLink>
+                                </div>
                             </ul>
                         </li>
                     ))}
