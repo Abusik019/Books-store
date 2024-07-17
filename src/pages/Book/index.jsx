@@ -1,9 +1,11 @@
 import "./style.sass";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getBookById } from "../../store/slices/books.js";
 import { Aside } from "../../components/Aside/index.jsx";
+import doneImg from '../../assets/done.png'
+import deleteImg from '../../assets/delete.png'
 
 function Book() {
     const params = useParams();
@@ -26,6 +28,7 @@ function Book() {
     return (
         <div className="book_container">
             <Aside />
+            <NavLink className="back-button" to='/'>Back</NavLink>
             {bookInfo?.payload && (
                 <div className="book_content">
                     <div className="book_title-container">
@@ -50,13 +53,13 @@ function Book() {
                             </h3>
                             <h4>
                                 <span>Year of issue</span>{" "}
-                                {bookInfo.payload.createdAt}
+                                {bookInfo.payload.createdAt.match(/\d\d\d\d-\d\d-\d\d/g)}
                             </h4>
                         </div>
                         <div className="buy_book">
-                            <h1>{bookInfo.payload.price}</h1>
-                            <div>
-                                <img src={bookInfo.payload.stock ? "In stock" : "Not available"}/>
+                            <h1>{bookInfo.payload.price} $</h1>
+                            <div className="isInStock">
+                                <img src={bookInfo.payload.stock ? doneImg : deleteImg}/>
                                 <h1>{bookInfo.payload.stock ? "In stock" : "Not available"}</h1>
                             </div>
                             <button>Add to cart</button>

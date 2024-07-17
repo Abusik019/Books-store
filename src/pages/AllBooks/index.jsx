@@ -1,6 +1,6 @@
 import "./style.sass";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getBooks } from "./../../store/slices/books";
 import { Aside } from "../../components/Aside";
 import { NavLink } from "react-router-dom";
@@ -14,6 +14,8 @@ function AllBooks() {
     useEffect(() => {
         dispatch(getBooks());
     }, [dispatch]);
+
+    if (loading) return <h2>Loading...</h2>;
 
     if (error) return <h2>{error}</h2>;
 

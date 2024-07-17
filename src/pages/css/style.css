@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   gap: 15%;
+  position: relative;
 }
 
 .book_content {
@@ -87,4 +88,49 @@
   border-radius: 7px;
   border: 1px solid #f0f0f0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.0392156863);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.buy_book h1 {
+  text-align: left;
+  font-size: 24px;
+}
+.buy_book button {
+  background-color: #3B72BE;
+}
+
+.isInStock {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.isInStock img {
+  width: 20px;
+  height: 20px;
+}
+.isInStock h1 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.back-button {
+  background-image: url("../../assets/back.png");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-color: transparent;
+  color: black;
+  background-position: 1%;
+  padding-left: 25px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 130px;
+  top: 100px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.back-button:hover {
+  text-decoration: underline;
 }/*# sourceMappingURL=style.css.map */
