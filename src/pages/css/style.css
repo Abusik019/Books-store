@@ -1,136 +1,125 @@
-.book_container {
+.all-books {
   height: 100vh;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 15%;
-  position: relative;
 }
 
-.book_content {
-  width: 75%;
-  height: 100%;
-  box-sizing: border-box;
-  padding-top: 100px;
-}
-
-.book_title-container {
-  text-align: left;
-  height: 10%;
-}
-.book_title-container h1, .book_title-container h2 {
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0;
-}
-.book_title-container h1 {
-  font-size: 36px;
-}
-.book_title-container h2 {
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.book_main {
+.books-container {
+  min-height: 100%;
   height: -moz-fit-content;
   height: fit-content;
+  width: calc(100% - 500px);
+  box-sizing: border-box;
+  padding: 30px;
+  text-align: left;
   display: flex;
-  align-items: center;
-  margin-top: 60px;
-  gap: 40px;
+  flex-direction: column;
+  justify-content: center;
 }
-.book_main img {
-  width: 350px;
-  height: 480px;
+.books-container h1 {
+  font-weight: 400;
+  font-size: 42px;
+  padding-left: 20px;
+}
+
+.empty-def_container {
+  width: 400px;
+  height: 100%;
+  background-color: white;
+}
+
+.books-content {
+  margin: 0;
+  max-height: 750px;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: auto;
+  padding: 30px 30px 10px 30px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.books-content li {
+  background-color: white;
+  width: 300px;
+  height: 150px;
+  border-radius: 20px;
+  padding: 15px;
+  padding-right: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.book-image {
+  height: 100%;
+  width: 35%;
+  position: relative;
+}
+.book-image img {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 7px;
-}
-
-.book_main-info {
-  height: 480px;
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  text-align: left;
-}
-.book_main-info h5 {
-  font-size: 22px;
-}
-.book_main-info p {
-  font-weight: 400;
-  font-size: 18px;
-  margin-top: 30px;
-}
-.book_main-info h1, .book_main-info h2, .book_main-info h3, .book_main-info h4 {
+  height: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-.book_main-info h1 span, .book_main-info h2 span, .book_main-info h3 span, .book_main-info h4 span {
-  color: #8b8b8b;
-  font-weight: 400;
-  font-size: 20px;
-  display: inline-block;
-}
-.book_main-info h1 {
-  margin-top: 100px;
+  z-index: 1;
 }
 
-.buy_book {
-  width: 300px;
-  height: 200px;
-  background-color: #FFFFFF;
-  border-radius: 7px;
-  border: 1px solid #f0f0f0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.0392156863);
-  padding: 20px;
-  box-sizing: border-box;
+.book-info {
   display: flex;
   flex-direction: column;
+  align-items: left;
   justify-content: space-around;
+  width: 50%;
+  height: 100%;
 }
-.buy_book h1 {
-  text-align: left;
-  font-size: 24px;
+.book-info h1 {
+  color: #3c8bfa;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
 }
-.buy_book button {
-  background-color: #3B72BE;
+.book-info h2 {
+  font-size: 16px;
+  margin: 0;
+  line-height: 20px;
 }
 
-.isInStock {
+.price-wrapper {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 25px;
 }
-.isInStock img {
-  width: 20px;
-  height: 20px;
-}
-.isInStock h1 {
+.price-wrapper h3 {
+  margin: 0;
   font-size: 16px;
-  font-weight: 400;
+}
+.price-wrapper button {
+  padding: 0;
+  height: 30px;
+  width: 30px;
+  background-image: url("../../assets//book2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
 }
 
-.back-button {
-  background-image: url("../../assets/back.png");
-  background-repeat: no-repeat;
-  background-size: 20px;
-  background-color: transparent;
-  color: black;
-  background-position: 1%;
-  padding-left: 25px;
-  box-sizing: border-box;
-  position: absolute;
-  left: 130px;
-  top: 100px;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
+::-webkit-scrollbar {
+  width: 10px;
 }
-.back-button:hover {
-  text-decoration: underline;
+
+::-webkit-scrollbar-thumb {
+  background: #FCA66C;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+  margin: 10px 0;
 }/*# sourceMappingURL=style.css.map */

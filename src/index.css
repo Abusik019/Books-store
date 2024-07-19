@@ -52,3 +52,9 @@ li{
 ul{
   padding: 0;
 }
+
+.ant-pagination.css-dev-only-do-not-override-p8b6i{
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 30px;
+}

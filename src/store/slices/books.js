@@ -5,6 +5,7 @@ const API_URL = "https://6666aa6ba2f8516ff7a44d13.mockapi.io/blum/api/v1/books";
 
 const initialState = {
     list: [],
+    object: null,
     loading: false,
     error: null,
 };
@@ -58,7 +59,7 @@ const booksSlice = createSlice({
             state.loading  = true;
         });
         builder.addCase(getBookById.fulfilled, (state, action) => {
-            state.list = action.payload;
+            state.object = action.payload;
 
             state.loading = false;
             state.error = null;
